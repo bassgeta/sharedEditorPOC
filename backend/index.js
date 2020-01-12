@@ -1,4 +1,5 @@
 const WebSocket = require("ws")
+const {getId} = require("./utils")
 
 const wss = new WebSocket.Server({ port: 8080 });
 const startContent = "Some starting string"
