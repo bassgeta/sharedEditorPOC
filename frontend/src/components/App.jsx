@@ -9,10 +9,37 @@ const Test = styled.div`
 
   background-color: red;
 `
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100vw;
+`
+const StyledTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+`
+const StyledClient = styled.li`
+  color: ${({isCurrent}) => isCurrent ? "green" : "black"};
+`
+const StyledInput = styled.textarea``
+
 const App = () => {
-  const {content} = useWebsocket();
+  const {content, clientId, clientList} = useWebsocket();
   return (
-    <Test />
+    <StyledApp>
+      <StyledTop>
+        <div>{`My username: ${clientId}`}</div>
+        <ul>
+          {
+            clientList.map(client => <StyledClient key={client} isCurrent={clientId === client}>{client}</StyledClient>)
+          }
+        </ul>
+      </StyledTop>
+      <StyledInput value2={content} />
+    </StyledApp>
   )
 }
 
