@@ -1,0 +1,11 @@
+{
+  "name": "sharededitor-fe",
+  "version": "1.0.0",
+  "description": "React frontend for demoing the websocket editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kerry Mahne",
+  "license": "ISC"
+}
